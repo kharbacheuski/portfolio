@@ -6,7 +6,7 @@ export default function Header() {
         <header className="header">
             <div className="header_navigation">
                 <div className="header_title">
-                    <a href="/" className="header-logo">
+                    <a href="#contacts" className="header-logo">
                         <span className={garamond.className}>Kiryl Harbacheuski</span>
                     </a>
                     <span className="job-position">Frontend Web Developer</span>

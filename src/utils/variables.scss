@@ -13,6 +13,15 @@ $colorBiege: #FBCBA7;
 $colorWhite: #ffffff;
 $colorPurple: #e53c89;
 $colorBlue: #0489ff;
+$colorOrange: #e18433;
 $colorGreen: #00c328;
 $colorBlack: #000;
 $colorBlackBlueLight: #000828;
+
+@mixin gradient-text {
+	background-size: 100%;
+	-webkit-background-clip: text;
+	-moz-background-clip: text;
+	-webkit-text-fill-color: transparent; 
+	-moz-text-fill-color: transparent;
+}
