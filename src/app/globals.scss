@@ -41,6 +41,7 @@ a {
   padding: 0 30px;
 }
 
+
 @media (min-width: $breakpoint-md) {
 	[data-animate] {
 		-webkit-transform: translate3d(0, 25px, 0);
@@ -68,7 +69,7 @@ a {
 	}
 
 	[data-animate-bottom] {
-		transform: translateY(-3rem);
+		transform: translateY(50px);
 		transition: 0.5s ease-out;
 		opacity: 0;
 
@@ -97,6 +98,15 @@ a {
 		&.__animated {
 			transform: translateX(0);
 			opacity: 1;
+		}
+	}
+
+	[data-animate-scale] {
+		transform: scale(0);
+		transition: 0.5s ease-out;
+
+		&.__animated {
+			transform: scale(1);
 		}
 	}
 }

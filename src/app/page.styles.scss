@@ -1,11 +1,14 @@
 @import "../utils/variables.scss";
 
+h2 {
+	max-width: max-content;
+}
+
 .main {
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
 }
-
 
 .preview {
 	&_inner {
@@ -133,7 +136,7 @@
 
 	&_item {
 		width: 100%;
-		transition: all 0.3s ease;
+		transition: all 0.2s ease;
 		background-color: $colorWhite;
 
 		padding: 90px 70px 90px 70px;
@@ -191,11 +194,12 @@
 			}
 
 			background-color: $colorBlack;
-			border-top: 3px solid $colorWhite;
+			border-top: 1px solid #e4e4e4;
 
 			p,span,h3 {
 				color: $colorWhite;
 			}
+
 			@media (min-width: $breakpoint-md) {
 				&:hover {
 					h3 {
@@ -210,9 +214,11 @@
 .stack {
 	padding: 150px 0 100px;
 	background: center/cover url("/absolute-black.webp") no-repeat;
+	background-attachment: fixed;
 
 	h2 {
 		max-width: 700px;
+		display: inline-block;
 	}
 
 	&-list {
@@ -225,11 +231,16 @@
 		}
 
 		li {
-			transition: all 0.3s ease;
 			cursor: pointer;
 			margin: 15px 0;
 
 			font-size: 24px;
+
+			max-width: max-content;
+
+			&.scaling {
+				transform: scale(0);
+			}
 
 			&::before {
 				transition: all 0.3s ease;
@@ -265,8 +276,6 @@
 			line-height: 25px;
 		}
 	}
-
-
 }
 
 .experience {
@@ -276,18 +285,25 @@
 	&_inner {
 		text-align: center;
 
-		p {
-			color: $colorBlack;
-			max-width: 750px;
-			margin: 0 auto;
-		}
-
 		.uppercase {
 			color: $colorBlack;
 			font-size: 30px;
 			line-height: 35px;
 			max-width: 700px;
 			font-weight: 700;
+		}
+
+		p {
+			color: $colorBlack;
+			max-width: 750px;
+			margin: 0 auto;
+
+			background-image: linear-gradient(100deg, $colorBlack, $colorPurple);
+			background-size: 100%;
+			-webkit-background-clip: text;
+			-moz-background-clip: text;
+			-webkit-text-fill-color: transparent; 
+			-moz-text-fill-color: transparent;
 		}
 	}
 }
@@ -305,7 +321,7 @@
 		gap: 30px;
 
 		h2 {
-			background-image: linear-gradient(45deg, $colorBiege, $colorWhite);
+			background-image: linear-gradient(45deg, $colorWhite, $colorBlue);
 			background-size: 100%;
 			-webkit-background-clip: text;
 			-moz-background-clip: text;
@@ -315,6 +331,7 @@
 	}
 
 	&_list {
+		overflow: hidden;
 		display: flex;
 		flex-wrap: wrap;
 		gap: 20px 50px;
@@ -327,10 +344,10 @@
 
 		li {
 			display: block;
+			position: relative;
 
 			a {
 				position: relative;
-				transition: all 0.2s ease;
 
 				font-size: 25px;
 

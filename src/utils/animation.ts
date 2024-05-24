@@ -1,11 +1,9 @@
 export const loadClassName = () => {
 	const elements = Array.from(
 		document.querySelectorAll(
-			'[data-animate], [data-animate-top], [data-animate-bottom], [data-animate-left], [data-animate-right]'
+			'[data-animate], [data-animate-top], [data-animate-bottom], [data-animate-left], [data-animate-right], [data-animate-scale]'
 		)
 	);
-
-    console.log(elements)
 
 	const loadClassName = (el: Element) => {
 		el.classList.add('__animated');

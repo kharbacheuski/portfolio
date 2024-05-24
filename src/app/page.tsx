@@ -2,7 +2,7 @@
 
 import "./page.styles.scss";
 import { Fragment, useEffect } from "react";
-import { inter, mono, mulish } from "@/utils/fonts";
+import { mono, mulish } from "@/utils/fonts";
 import {loadClassName} from "@/utils/animation";
 
 export default function Home() {
@@ -21,7 +21,6 @@ export default function Home() {
 								<label htmlFor="preview-photo">Kiryl Harbacheuski</label>
 							</div>
 							
-
 							<div className="preview_content">
 								<div className="preview-title">
 									<h1>
@@ -34,8 +33,8 @@ export default function Home() {
 						</div>
 
 						<div className={`preview-description`}>
-							<p>I'am from Minsk. I have 3 years of commercial experience.</p>
-							<p>I love making beautiful things, learning new modern technologies and developing in the IT field.</p>
+							<p data-animate-right style={{transitionDelay: '0.7s'}}>I'am from Minsk. I have 3 years of commercial experience.</p>
+							<p data-animate-left style={{transitionDelay: '1.2s'}}>I love making beautiful things, learning new modern technologies and developing in the IT field.</p>
 						</div>
 					</div>
 				</div>
@@ -46,7 +45,7 @@ export default function Home() {
 					<div className="past_item dark">
 						<h3 className={mulish.className}>Education</h3>
 						<p>Belarusian State University of Informatics and Radioelectronics</p>
-						<span>(2021 - 2025)</span>
+						<span>(КСиС/ВМСиС 2021 - 2025)</span>
 					</div>
 					<div className="past_item">
 						<h3 className={mulish.className}>Job</h3>
@@ -59,29 +58,23 @@ export default function Home() {
 			<section id="stack" className="stack">
 				<div className="container">
 					<div className="stack_inner">
-						<h2>
+						<h2 data-animate-left>
 							I have extensive experience in client side development using a variety of technologies:
 						</h2>
 
 						<ul className={`stack-list ${mono.className}`}>
-							<li data-animate-top style={{transitionDelay: '0.1s'}}>React</li>
-							<li data-animate-top style={{transitionDelay: '0.15s'}}>Typescript / JavaScript</li>
-							<li data-animate-top style={{transitionDelay: '0.2s'}}>Next.js</li>
-							<li data-animate-top style={{transitionDelay: '0.25s'}}>CSS(SCSS)</li>
-							<li data-animate-top style={{transitionDelay: '0.3s'}}>Redux</li>
-							<li data-animate-top style={{transitionDelay: '0.35s'}}>Mobx</li>
-							<li data-animate-top style={{transitionDelay: '0.4s'}}>Webpack</li>
-							<li data-animate-top style={{transitionDelay: '0.45s'}}>Vite</li>
-							<li data-animate-top style={{transitionDelay: '0.50s'}}>Material UI</li>
-							<li data-animate-top style={{transitionDelay: '0.55s'}}>Ghost CMS</li>
-							<li data-animate-top style={{transitionDelay: '0.6s'}}>Docker</li>
+							<li data-animate-top data-animate-scale style={{transitionDelay: '0.1s'}}>React</li>
+							<li data-animate-top data-animate-scale style={{transitionDelay: '0.15s'}}>Typescript / JavaScript</li>
+							<li data-animate-top data-animate-scale style={{transitionDelay: '0.2s'}}>Next.js</li>
+							<li data-animate-top data-animate-scale style={{transitionDelay: '0.25s'}}>CSS(SCSS)</li>
+							<li data-animate-top data-animate-scale style={{transitionDelay: '0.3s'}}>Redux</li>
+							<li data-animate-top data-animate-scale style={{transitionDelay: '0.35s'}}>Mobx</li>
+							<li data-animate-top data-animate-scale style={{transitionDelay: '0.4s'}}>Webpack</li>
+							<li data-animate-top data-animate-scale style={{transitionDelay: '0.45s'}}>Vite</li>
+							<li data-animate-top data-animate-scale style={{transitionDelay: '0.50s'}}>Material UI</li>
+							<li data-animate-top data-animate-scale style={{transitionDelay: '0.55s'}}>Ghost CMS</li>
+							<li data-animate-top data-animate-scale style={{transitionDelay: '0.6s'}}>Docker</li>
 						</ul>
-
-						{/* <div className="stack_description">
-							<p>
-								I was developing micro frontend applications based on React + Webpack Module Federation. 
-							</p>
-						</div> */}
 					</div>
 				</div>
 			</section>
@@ -108,22 +101,22 @@ export default function Home() {
 						</h2>
 
 						<ul className="contacts_list">
-							<li>
+							<li data-animate style={{transitionDelay: '0.1s'}}>
 								<a href="https://github.com/kharbacheuski/" target="_blank" rel="noreferrer" className="contacts-link">
 									Github
 								</a>
 							</li>
-							<li>
+							<li data-animate style={{transitionDelay: '0.2s'}}>
 								<a href="https://www.linkedin.com/in/kiryl-harbacheuski-293b42243/" target="_blank" rel="noreferrer" className="contacts-link">
 									Linkedin
 								</a>
 							</li>
-							<li>
+							<li data-animate style={{transitionDelay: '0.3s'}}>
 								<a href="https://t.me/KirylHarbacheuski/" target="_blank" rel="noreferrer" className="contacts-link">
 									Telegram
 								</a>
 							</li>
-							<li>
+							<li data-animate style={{transitionDelay: '0.4s'}}>
 								<a href="mailto:k.harbacheuski@gmail.com" target="_blank" rel="noreferrer" className="contacts-link">
 									k.harbacheuski@gmail.com
 								</a>
