@@ -50,12 +50,14 @@ export default function Home() {
 					<Swiper
 						direction="horizontal"
 						spaceBetween={0}
-						slidesPerView={2.3}
 						onSlideChange={() => console.log('slide change')}
 						onSwiper={(swiper) => console.log(swiper)}
 						modules={[Scrollbar]}
 						scrollbar={{ draggable: false }}
 						breakpoints={{
+							1200: {
+								slidesPerView: 2.5,
+							},
 							768: {
 								slidesPerView: 1.8,
 							},
