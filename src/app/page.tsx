@@ -86,21 +86,21 @@ export default function Home() {
 						<SwiperSlide className="past_item job">
 							<h3 className={mulish.className}>Job</h3>
 							<p>
-								<a href="https://www.linkedin.com/company/finmarketsoft-people/">Finmarket Soft</a>
+								<a target="_blank" href="https://www.linkedin.com/company/finmarketsoft-people/">Finmarket Soft</a>
 							</p>
 							<span>(fulltime since jan 2022)</span>
 						</SwiperSlide>
 						<SwiperSlide className="past_item education">
 							<h3 className={mulish.className}>Education</h3>
 							<p>
-								<a href="https://www.bsuir.by/">Belarusian State University of Informatics and Radioelectronics</a>
+								<a target="_blank" href="https://www.bsuir.by/">Belarusian State University of Informatics and Radioelectronics</a>
 							</p>
 							<span>(КСиС/ВМСиС 2021 - 2025)</span>
 						</SwiperSlide>
 						<SwiperSlide className="past_item hobbie">
 							<h3 className={mulish.className}>Hobby</h3>
 							<p>Music / Films / Books</p>
-							<a className="link-with-logo" href="https://open.spotify.com/artist/6p6WdgrsAyVbtNVW2vRuHn">
+							<a className="link-with-logo" target="_blank" href="https://open.spotify.com/artist/6p6WdgrsAyVbtNVW2vRuHn">
 								<img width={30} height={30} src="/spotify.svg" alt="" />
 								<span>манер оф спич</span>
 							</a>
