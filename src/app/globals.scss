@@ -8,15 +8,25 @@
     "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+::selection {
+	color: black;
+	background: white;
+}
 
-  color: rgb(255, 255, 255);
-  font-weight: 500;
-  font-size: 30px;
-  line-height: 35px;
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+
+	color: rgb(255, 255, 255);
+	font-weight: 500;
+	font-size: 30px;
+	line-height: 35px;
+
+  	@media (max-width: $breakpoint-md) {
+		font-size: 25px;
+		line-height: 35px;
+	}
 }
 
 html,
@@ -42,7 +52,7 @@ a {
 }
 
 
-@media (min-width: $breakpoint-md) {
+// @media (min-width: $breakpoint-md) {
 	[data-animate] {
 		-webkit-transform: translate3d(0, 25px, 0);
 		transform: translate3d(0, 25px, 0);
@@ -109,7 +119,7 @@ a {
 			transform: scale(1);
 		}
 	}
-}
+// }
 
 .uppercase {
   text-transform: uppercase;

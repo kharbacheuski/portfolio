@@ -2,8 +2,13 @@
 
 import "./page.styles.scss";
 import { Fragment, useEffect } from "react";
-import { mono, mulish } from "@/utils/fonts";
+import {mulish } from "@/utils/fonts";
 import {loadClassName} from "@/utils/animation";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import {Scrollbar} from 'swiper/modules';
+
+import 'swiper/css';;
+import 'swiper/css/scrollbar';
 
 export default function Home() {
 
@@ -25,7 +30,7 @@ export default function Home() {
 								<div className="preview-title">
 									<h1>
 										<span className="line uppercase" data-animate-top style={{transitionDelay: '0.1s'}}>frontend</span>
-										<span className="line uppercase" data-animate-right style={{transitionDelay: '0.3s'}}>developer</span>
+										<span className="line uppercase" data-animate-right style={{transitionDelay: '0.3s'}}><span className="uppercase inner">dev</span>eloper</span>
 										<span className="location" data-animate-right style={{transitionDelay: '1s'}}>Minsk, Belarus</span>
 									</h1>
 								</div>
@@ -40,50 +45,73 @@ export default function Home() {
 				</div>
 			</section>
 
-			<section id="past" className="past">
+			<section id="skills" className="past">
 				<div className="past_inner">
-					<div className="past_item dark">
-						<h3 className={mulish.className}>Education</h3>
-						<p>Belarusian State University of Informatics and Radioelectronics</p>
-						<span>(КСиС/ВМСиС 2021 - 2025)</span>
-					</div>
-					<div className="past_item">
-						<h3 className={mulish.className}>Job</h3>
-						<p>Finmarket Soft</p>
-						<span>(fulltime since jan 2022)</span>
-					</div>
-				</div>
-			</section>
-
-			<section id="stack" className="stack">
-				<div className="container">
-					<div className="stack_inner">
-						<h2 data-animate-left>
-							I have extensive experience in client side development using a variety of technologies:
-						</h2>
-
-						<ul className={`stack-list ${mono.className}`}>
-							<li data-animate-top data-animate-scale style={{transitionDelay: '0.1s'}}>React</li>
-							<li data-animate-top data-animate-scale style={{transitionDelay: '0.15s'}}>Typescript / JavaScript</li>
-							<li data-animate-top data-animate-scale style={{transitionDelay: '0.2s'}}>Next.js</li>
-							<li data-animate-top data-animate-scale style={{transitionDelay: '0.25s'}}>CSS(SCSS)</li>
-							<li data-animate-top data-animate-scale style={{transitionDelay: '0.3s'}}>Redux</li>
-							<li data-animate-top data-animate-scale style={{transitionDelay: '0.35s'}}>Mobx</li>
-							<li data-animate-top data-animate-scale style={{transitionDelay: '0.4s'}}>Webpack</li>
-							<li data-animate-top data-animate-scale style={{transitionDelay: '0.45s'}}>Vite</li>
-							<li data-animate-top data-animate-scale style={{transitionDelay: '0.50s'}}>Material UI</li>
-							<li data-animate-top data-animate-scale style={{transitionDelay: '0.55s'}}>Ghost CMS</li>
-							<li data-animate-top data-animate-scale style={{transitionDelay: '0.6s'}}>Docker</li>
-						</ul>
-					</div>
+					<Swiper
+						direction="horizontal"
+						spaceBetween={0}
+						slidesPerView={2.3}
+						onSlideChange={() => console.log('slide change')}
+						onSwiper={(swiper) => console.log(swiper)}
+						modules={[Scrollbar]}
+						scrollbar={{ draggable: false }}
+						breakpoints={{
+							768: {
+								slidesPerView: 1.8,
+							},
+							350: {
+							  slidesPerView: 1.2,
+							},
+						}}
+					>
+						<SwiperSlide className="past_item skills">
+							<h3 className={mulish.className}>Skills</h3>
+							<ul className={`list `}>
+								<li data-animate-top data-animate-scale style={{transitionDelay: '0.1s'}}>React</li>
+								<li data-animate-top data-animate-scale style={{transitionDelay: '0.15s'}}>Typescript</li>
+								<li data-animate-top data-animate-scale style={{transitionDelay: '0.15s'}}>JavaScript</li>
+								<li data-animate-top data-animate-scale style={{transitionDelay: '0.2s'}}>Next.js</li>
+								<li data-animate-top data-animate-scale style={{transitionDelay: '0.25s'}}>CSS(SCSS)</li>
+								<li data-animate-top data-animate-scale style={{transitionDelay: '0.3s'}}>Redux</li>
+								<li data-animate-top data-animate-scale style={{transitionDelay: '0.35s'}}>Mobx</li>
+								<li data-animate-top data-animate-scale style={{transitionDelay: '0.4s'}}>Webpack</li>
+								<li data-animate-top data-animate-scale style={{transitionDelay: '0.45s'}}>Vite</li>
+								<li data-animate-top data-animate-scale style={{transitionDelay: '0.50s'}}>Material UI</li>
+								<li data-animate-top data-animate-scale style={{transitionDelay: '0.55s'}}>Ghost CMS</li>
+								<li data-animate-top data-animate-scale style={{transitionDelay: '0.6s'}}>Docker</li>
+							</ul>
+						</SwiperSlide>
+						<SwiperSlide className="past_item job">
+							<h3 className={mulish.className}>Job</h3>
+							<p>
+								<a href="https://www.linkedin.com/company/finmarketsoft-people/">Finmarket Soft</a>
+							</p>
+							<span>(fulltime since jan 2022)</span>
+						</SwiperSlide>
+						<SwiperSlide className="past_item education">
+							<h3 className={mulish.className}>Education</h3>
+							<p>
+								<a href="https://www.bsuir.by/">Belarusian State University of Informatics and Radioelectronics</a>
+							</p>
+							<span>(КСиС/ВМСиС 2021 - 2025)</span>
+						</SwiperSlide>
+						<SwiperSlide className="past_item hobbie">
+							<h3 className={mulish.className}>Hobbie</h3>
+							<p>Music / Films / Books</p>
+							<a className="link-with-logo" href="https://open.spotify.com/artist/6p6WdgrsAyVbtNVW2vRuHn">
+								<img width={30} height={30} src="/spotify.svg" alt="" />
+								<span>манер оф спич</span>
+							</a>
+						</SwiperSlide>
+					</Swiper>
 				</div>
 			</section>
 
 			<section className="experience">
 				<div className="container">
 					<div className="experience_inner">
-						<p>
-							I create both <span className={`uppercase`}>
+						<p data-animate-top style={{transitionDelay: '0.1s'}}>
+							I have extensive experience in client side development using a variety of technologies and i can create both <span className={`uppercase`}>
 								landing pages
 							</span> and <span className={`uppercase`}>
 								large applications

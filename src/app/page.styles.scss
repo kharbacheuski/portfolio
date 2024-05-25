@@ -11,6 +11,12 @@ h2 {
 }
 
 .preview {
+    height: calc(100vh - 200px);
+
+	@media (max-width: $breakpoint-md) {
+		height: auto;
+	}
+
 	&_inner {
 		display: flex;
 		flex-direction: column;
@@ -21,6 +27,9 @@ h2 {
 		grid-template-columns: 550px 1fr;
 		gap: 150px;
 	
+		@media (max-width: $breakpoint-xl) {
+			gap: 80px;
+		}
 		@media (max-width: $breakpoint-lg) {
 			grid-template-columns: 350px 1fr;
 			gap: 50px;
@@ -39,6 +48,9 @@ h2 {
 		
 		@media (max-width: $breakpoint-md) {
 			margin-top: 50px;
+		}
+		@media (max-width: $breakpoint-sm) {
+			margin-top: 20px;
 		}
 	}
 
@@ -80,17 +92,36 @@ h2 {
 			font-size: 50px;
 			line-height: 50px;
 
+			&:hover {
+				.inner {
+					transform: rotate(12deg);
+					color: #cea3e4;
+				}
+			}
+
 			.line {
 				font-size: inherit;
 				line-height: inherit;
 				display: block;
 				margin-top: 5px;
+
+				.inner {
+					display: inline-block;
+					font-size: inherit;
+					line-height: inherit;
+
+					transition: all 0.5s;
+				}
+
+				
 			}
 			.location {
 				display: block;
 				font-size: 15px;
 				line-height: 25px;
 				text-align: end;
+
+				color: $colorGray;
 			}
 		}
 	}
@@ -98,7 +129,7 @@ h2 {
 		align-self: flex-end;
 		max-width: 650px;
 		position: relative;
-		top: -150px;
+		top: -50px;
 		backdrop-filter: blur(20px);
 	
 		@media (max-width: $breakpoint-xl) {
@@ -106,6 +137,7 @@ h2 {
 			top: -100px;
 		}
 		@media (max-width: $breakpoint-lg) {
+			margin-top: 100px;
 			position: static;
 			padding: 0;
 		}
@@ -114,19 +146,24 @@ h2 {
 		}
 
 		p {
+			transition: all .3s;
 
 			&:first-of-type {
 				margin-bottom: 20px;
 
-				background-image: linear-gradient(45deg, $colorWhite, #6d35ab);
-				@include gradient-text;
+				&:hover {
+					background-image: linear-gradient(45deg, $colorWhite, #6d35ab);
+					@include gradient-text;
+				}
 			}
 
 			&:last-of-type {
 				margin-top: 20px;
 
-				background-image: linear-gradient(45deg, $colorWhite, $colorPurple);
-				@include gradient-text;
+				&:hover {
+					background-image: linear-gradient(45deg, $colorWhite, #1351af);
+					@include gradient-text;
+				}
 			}
 		}
 	}
@@ -136,16 +173,18 @@ h2 {
 	padding: 100px 0 0;
 
 	&_inner {
-		display: flex;
+		// display: grid;
+		// grid-template-columns: 1fr 1fr;
 		transition: all 0.3s ease;
 
-		@media (max-width: $breakpoint-md) {
-			flex-direction: column;
-		}
+		// @media (max-width: $breakpoint-md) {
+		// 	grid-template-columns: 1fr;
+		// }
 	}
 
 	&_item {
-		width: 100%;
+		// width: 100%;
+		height: auto !important;
 		transition: all 0.2s ease;
 		background-color: $colorWhite;
 
@@ -179,140 +218,178 @@ h2 {
 			line-height: 25px;
 		}
 
-		@media (min-width: $breakpoint-md) {
-			&:hover {
-				width: calc(100% + 200px);
-	
-				@media (max-width: $breakpoint-xl) {
-					width: calc(100% + 100px);
-				}
-	
-				p {
-					background-image: linear-gradient(45deg, $colorOrange, $colorBlack);
+		&.job {
+			@media (min-width: $breakpoint-md) {
+				p:hover {
+					background-image: linear-gradient(45deg, #56e05a, $colorBlack);
 					@include gradient-text;
 				}
 			}
 		}
 
-		&.dark {
-			padding: 90px 90px 90px 70px;
-
-			@media (max-width: $breakpoint-xl) {
-				padding: 70px 70px 70px 40px;
-			}
-			@media (max-width: $breakpoint-md) {
-				padding: 30px 20px 30px 30px;
-			}
-
+		&.education {
 			background-color: $colorBlack;
-			border-top: 1px solid #e4e4e4;
 
 			p,span,h3 {
 				color: $colorWhite;
 			}
 
 			@media (min-width: $breakpoint-md) {
-				&:hover {
-					p {
-						background-image: linear-gradient(45deg, $colorWhite, $colorPurple);
-						@include gradient-text;
-					}
+				p:hover {
+					background-image: linear-gradient(45deg, $colorWhite, $colorBlue);
+					@include gradient-text;
 				}
 			}
 		}
-	}
-}
-
-.stack {
-	padding: 150px 0 100px;
-	background: center/cover url("/absolute-black.webp") no-repeat;
-	background-attachment: fixed;
-
-	h2 {
-		max-width: 700px;
-
-		background-image: linear-gradient(45deg, $colorWhite, #6d35ab);
-		@include gradient-text;
-	}
-
-	&-list {
-		margin: 50px 0 0 70px;
-		padding-left: 17px;
-		list-style: none;
-
-		@media (max-width: $breakpoint-md) {
-			margin: 50px 0 0 30px;
-		}
-
-		li {
-			cursor: pointer;
-			margin: 15px 0;
-
-			font-size: 24px;
-
-			max-width: max-content;
-
-			&.scaling {
-				transform: scale(0);
-			}
-
-			&::before {
-				transition: all 0.3s ease;
-				content: "<";
-			}
-
-			&::after {
-				transition: all 0.3s ease;
-				content: "/>";
-				margin-left: 5px;
-			}
+		&.hobbie {
+			background-color: $colorPinkLight;
 
 			@media (min-width: $breakpoint-md) {
-				&:hover {
-					&::before {
-						content: "<";
-						margin-left: 5px;
+				a:hover {
+					img {
+						transform: scale(1.2);
 					}
-					&::after {
-						margin-left: 10px;
+				}
+			}
+
+			.link-with-logo {
+				margin-top: 20px;
+				display: flex;
+				align-items: center;
+				gap: 5px;
+
+				img {
+					transition: all .2s;
+				}
+			}
+		}
+		&.skills {
+			background: center/cover url("/absolute-black.webp") no-repeat;
+			background-attachment: fixed;
+
+			p,span,h3, ul {
+				color: $colorWhite;
+			}
+
+			.list {
+				list-style: none;
+				margin-top: 30px;
+				display: flex;
+    			flex-wrap: wrap;
+				gap: 10px;
+
+				li {
+					font-size: 18px;
+					line-height: 25px;
+					position: relative;
+
+					&:not(:last-of-type):after {
+						content: "/";
+						right: -5px;
+						position: relative;
 					}
 				}
 			}
 		}
 	}
-
-	&_description {
-		max-width: 700px;
-		margin-top: 50px;
-
-		p {
-			font-size: 18px;
-			line-height: 25px;
-		}
-	}
 }
 
+// .stack {
+// 	padding: 150px 0 100px;
+// 	background: center/cover url("/absolute-black.webp") no-repeat;
+// 	background-attachment: fixed;
+
+// 	h2 {
+// 		max-width: 700px;
+
+// 		background-image: linear-gradient(45deg, $colorWhite, #6d35ab);
+// 		@include gradient-text;
+// 	}
+
+// 	&-list {
+// 		margin: 50px 0 0 70px;
+// 		padding-left: 17px;
+// 		list-style: none;
+
+// 		@media (max-width: $breakpoint-md) {
+// 			margin: 50px 0 0 30px;
+// 		}
+
+// 		li {
+// 			cursor: pointer;
+// 			margin: 15px 0;
+
+// 			font-size: 24px;
+
+// 			max-width: max-content;
+
+// 			&.scaling {
+// 				transform: scale(0);
+// 			}
+
+// 			&::before {
+// 				transition: all 0.3s ease;
+// 				content: "<";
+// 			}
+
+// 			&::after {
+// 				transition: all 0.3s ease;
+// 				content: "/>";
+// 				margin-left: 5px;
+// 			}
+
+// 			@media (min-width: $breakpoint-md) {
+// 				&:hover {
+// 					&::before {
+// 						content: "<";
+// 						margin-left: 5px;
+// 					}
+// 					&::after {
+// 						margin-left: 10px;
+// 					}
+// 				}
+// 			}
+// 		}
+// 	}
+
+// 	&_description {
+// 		max-width: 700px;
+// 		margin-top: 50px;
+
+// 		p {
+// 			font-size: 18px;
+// 			line-height: 25px;
+// 		}
+// 	}
+// }
+
 .experience {
-	padding: 100px 0;
-	background-color: $colorWhite;
+	padding: 150px 0;
+	// background-color: $colorWhite;
+
+	@media (max-width: $breakpoint-md) {
+		padding: 80px 0;
+	}
 
 	&_inner {
 		text-align: center;
+		display: flex;
+		flex-direction: column;
+		align-items: space-between;
 
 		.uppercase {
-			color: $colorBlack;
+			color: $colorWhite;
 			font-size: 30px;
 			line-height: 35px;
-			max-width: 700px;
 			font-weight: 700;
 		}
 
 		p {
-			color: $colorBlack;
-			max-width: 750px;
+			color: $colorWhite;
+			max-width: 1000px;
 			margin: 0 auto;
 
-			background-image: linear-gradient(100deg, $colorBlack, $colorPurple);
+			background-image: linear-gradient(25deg, $colorWhite, $colorPurple);
 			@include gradient-text;
 		}
 	}
@@ -356,6 +433,11 @@ h2 {
 				position: relative;
 
 				font-size: 25px;
+				
+				@media (max-width: $breakpoint-sm) {
+					font-size: 18px;
+					line-height: 25px;
+				}
 
 				&::after {
 					content: "";
