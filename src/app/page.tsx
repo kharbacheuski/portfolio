@@ -96,7 +96,7 @@ export default function Home() {
 							<span>(КСиС/ВМСиС 2021 - 2025)</span>
 						</SwiperSlide>
 						<SwiperSlide className="past_item hobbie">
-							<h3 className={mulish.className}>Hobbie</h3>
+							<h3 className={mulish.className}>Hobby</h3>
 							<p>Music / Films / Books</p>
 							<a className="link-with-logo" href="https://open.spotify.com/artist/6p6WdgrsAyVbtNVW2vRuHn">
 								<img width={30} height={30} src="/spotify.svg" alt="" />
