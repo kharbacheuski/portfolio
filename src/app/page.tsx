@@ -46,7 +46,7 @@ export default function Home() {
 				</div>
 			</section>
 
-			<section id="skills" className="past">
+			<section id="stack" className="past">
 				<div className="past_inner">
 					<Swiper
 						direction="horizontal"
@@ -67,8 +67,8 @@ export default function Home() {
 							},
 						}}
 					>
-						<SwiperSlide className="past_item skills">
-							<h3 className={mulish.className}>Skills</h3>
+						<SwiperSlide className="past_item tech-stack">
+							<h3 className={mulish.className}>Stack</h3>
 							<ul className={`list `}>
 								<li data-animate-top data-animate-scale style={{transitionDelay: '0.1s'}}>React</li>
 								<li data-animate-top data-animate-scale style={{transitionDelay: '0.15s'}}>Typescript</li>
@@ -110,7 +110,7 @@ export default function Home() {
 				</div>
 			</section>
 
-			<section className="experience">
+			<section id="experience" className="experience">
 				<div className="container">
 					<div className="experience_inner">
 						<h2 data-animate-top style={{transitionDelay: '0.1s'}}>
@@ -133,28 +133,40 @@ export default function Home() {
 							<img data-animate-right style={{transitionDelay: '0.1s'}} width={80} height={80} className="logo" src="/nodejs-logo.svg" alt="" />
 							<img data-animate-top style={{transitionDelay: '0.2s'}} width={80} height={80} className="logo" src="/docker-logo.svg" alt="" />
 							<img data-animate-left style={{transitionDelay: '0.4s'}} width={80} height={80} className="logo" src="/figma-logo.svg" alt="" />
-							<img width={80} height={80} className="logo" src="/jest-logo.svg" alt="" />
+							<img data-animate-right style={{transitionDelay: '0.3s'}} width={80} height={80}  className="logo" src="/jest-logo.svg" alt="" />
 							<img data-animate-bottom style={{transitionDelay: '0.2s'}}  width={80} height={80} className="logo" src="/scss-logo.svg" alt="" />
+							<img data-animate-top style={{transitionDelay: '0.2s'}}  width={80} height={80} className="logo" src="/webpack-logo.svg" alt="" />
+							<img data-animate-right style={{transitionDelay: '0.1s'}}  width={80} height={80} className="logo" src="/redux-logo.svg" alt="" />
 						</div>
 						<div className="stack_content">
-							<h3 data-animate-top style={{transitionDelay: '0.2s'}}>My primary stack is </h3>
-							<p>
-								<span className="tech">React</span> and <span className="tech">TypeScript</span>. 
-								I have extensive experience with server-side interactions via <span className="tech">REST APIs</span>. 
-								I've used CSS preprocessors on all my projects and worked extensively with the <span className="tech">MUI UI library. </span>
+							<div className="stack_content-block">
+								<h3 data-animate-top style={{transitionDelay: '0.2s'}}>My primary stack is </h3>
+								<p>
+									<span className="tech">React</span> and <span className="tech">TypeScript</span>. 
+									I have extensive experience with server-side interactions via <span className="tech">REST APIs</span>. 
+									I've used CSS preprocessors on all my projects and worked extensively with the UI-kits such as <span className="tech">Material UI. </span>
 
-								I have experience with <span className="tech">MobX</span> and <span className="tech">Redux Toolkit</span> state managers, 
-								but I also actively use React's built-in state management tools. I've worked with <span className="tech">GraphQL</span> and <span className="tech">RxJS</span>.
-							</p> 
-
-							<h3 data-animate-top style={{transitionDelay: '0.3s'}}>Related experience and technologies:</h3>
-							<ul>
-								<li><span className="tech">Figma</span>;</li>
-								<li>Git (Gitlab/Github/Bitbucket);</li>
-								<li>Extensively used <span className="tech">Docker</span> for application deployment;</li>
-								<li>Experience writing unit and integration tests with <span className="tech">Jest</span> and the <span className="tech">React Testing Library</span>;</li>
-								<li>Wrote simple backend applications in <span className="tech">Node.js</span> using Sequelize ORM.</li>
-							</ul>	
+									I have experience with <span className="tech">MobX</span> and <span className="tech">Redux Toolkit</span> state managers, 
+									but I also actively use React's built-in state management tools. I've worked with <span className="tech">GraphQL</span> and <span className="tech">RxJS</span>.
+								</p> 
+							</div>
+							<div className="stack_content-block">
+								<h3 data-animate-top style={{transitionDelay: '0.3s'}}>Related experience and technologies:</h3>
+								<ul>
+									<li><span className="tech">Figma</span>;</li>
+									<li>Git (Gitlab/Github/Bitbucket);</li>
+									<li>Extensively used <span className="tech">Docker</span> for application deployment;</li>
+									<li>Experience writing unit and integration tests with <span className="tech">Jest</span> and the <span className="tech">React Testing Library</span>;</li>
+									<li>Wrote simple backend applications in <span className="tech">Node.js</span> using Sequelize ORM.</li>
+								</ul>	
+							</div>
+							<div className="stack_content-block">
+								<p>
+									I worked on products from MVP to production, including high-load back-office systems. 
+									<br />
+									For over a year, i served as lead developer: planning tasks, making architectural decisions, and ensuring the quality of the team's front-end.
+								</p>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -163,8 +175,14 @@ export default function Home() {
 			<section className="projects">
 				<div className="container xl">
 					<div className="projects_inner">
-						<h2>Projects</h2>
+						
 						<div className="project_items">
+							<div className="project_item">
+								<h3 className="project_item-headline"></h3>
+								<div className="project_item-description">
+									<h2>Projects</h2>
+								</div>
+							</div>
 							<div className="project_item">
 								<h3 className="project_item-headline" data-animate-top style={{transitionDelay: '0.1s'}}>1. Cryptocurrency finance system</h3>
 								<div className="project_item-description">
