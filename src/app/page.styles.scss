@@ -70,19 +70,11 @@ h2 {
 		object-fit: cover;
 		object-position: 100% 0%;
 
-		transition: all 0.4s ease-out;
-
 		@media (max-width: $breakpoint-md) {
 			width: 350px;
 		}
 		@media (max-width: $breakpoint-xsm) {
 			width: 100%;
-		}
-
-		@media (min-width: $breakpoint-md) {
-			&:hover {
-				width: calc(100% + 20px);
-			}
 		}
 	}
 	
@@ -152,6 +144,9 @@ h2 {
 		}
 
 		p {
+			font-size: 30px;
+			line-height: 40px;
+
 			transition: all .3s;
 
 			&:first-of-type {
@@ -199,6 +194,8 @@ h2 {
 		p,span,h3 {
 			transition: color 0.3s ease;
 			color: $colorBlack;
+			font-size: 30px;
+			line-height: 35px;
 		}
 
 		p {
@@ -227,7 +224,7 @@ h2 {
 		}
 
 		&.education {
-			background-color: $colorBlack;
+			background-color: $colorEducation;
 
 			p,span,h3 {
 				color: $colorWhite;
@@ -235,7 +232,7 @@ h2 {
 
 			@media (min-width: $breakpoint-md) {
 				p:hover {
-					background-image: linear-gradient(45deg, $colorWhite, $colorBlue);
+					background-image: linear-gradient(45deg, $colorWhite, #bababa);
 					@include gradient-text;
 				}
 			}
@@ -313,13 +310,166 @@ h2 {
 			font-weight: 700;
 		}
 
-		p {
+		h2 {
 			color: $colorWhite;
 			max-width: 1000px;
 			margin: 0 auto;
 
 			background-image: linear-gradient(25deg, $colorWhite, $colorPurple);
 			@include gradient-text;
+		}
+	}
+}
+
+.stack {
+	padding: 50px 0 100px;
+	position: relative;
+
+	&_inner {
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+
+		@media (max-width: $breakpoint-lg) {
+			grid-template-columns: 1fr 2.5fr;
+		}
+
+		@media (max-width: $breakpoint-md) {
+			grid-template-columns: 1fr;
+			gap: 30px;
+		}
+	}
+
+	&_icons {
+		position: relative;
+
+		@media (max-width: $breakpoint-md) {
+			display: none;
+		}
+
+		.logo {
+			position: absolute;
+
+			@media (max-width: $breakpoint-md) {
+				position: relative;
+			}
+		}
+	}
+
+	&_content {
+		padding-left: 100px;
+
+		backdrop-filter: blur(3px);
+
+		@media (max-width: $breakpoint-lg) {
+			padding-left: 50px;
+			background: #00000052;
+		}
+    	
+		@media (max-width: $breakpoint-md) {
+			padding-left: 0;
+			background: #00000052;
+		}
+
+		h3 {
+			&:not(:first-of-type) {
+				margin-top: 30px;
+			}
+			margin-bottom: 30px;
+		}
+
+		p {
+			max-width: 850px;
+		}
+
+		li {
+			margin: 5px 0;
+		}
+
+		.tech {
+			color: $colorTech;
+		}
+
+		ul {
+			padding-left: 20px
+		}
+	}
+}
+
+.projects {
+	background-color: $colorWhite;
+
+	padding: 100px 0;
+
+	@media (max-width: $breakpoint-md) {
+		padding: 50px 0;
+	}
+
+	&_inner {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		h2 {
+			margin-bottom: 50px;
+
+			font-size: 40px;
+			line-height: 50px;
+
+			color: $colorBlack;
+
+			@media (max-width: $breakpoint-lg) {
+				font-size: 30px;
+				line-height: 40px;
+			}
+		}
+
+		.project_items {
+			display: flex;
+			flex-direction: column;
+			gap: 50px;
+
+			.project_item {
+				padding: 30px;
+				border-radius: 10px;
+
+				display: grid;
+				grid-template-columns: 1fr 2fr;
+				gap: 50px;
+
+				@media (max-width: $breakpoint-lg) {
+					grid-template-columns: 1fr;
+					gap: 30px;
+					padding: 0;
+				}
+
+				h3, li, span {
+					color: $colorBlack;
+				}
+
+				h3 {
+					background-image: linear-gradient(25deg, #000000, #716ee1);
+					@include gradient-text;
+				}
+
+				.tech {
+					font-weight: 800;
+				}
+
+				ul {
+					padding-left: 20px;
+					display: flex;
+					flex-direction: column;
+					gap: 20px;
+
+					@media (max-width: $breakpoint-lg) {
+						padding-left: 0;
+					}
+
+					li {
+						list-style-type: none;
+					}
+				}
+			}
 		}
 	}
 }
@@ -352,11 +502,8 @@ h2 {
 		flex-wrap: wrap;
 		gap: 20px 50px;
 
-		margin-top: 50px;
+		margin-top: 20px;
 
-		@media (max-width: $breakpoint-md) {
-			margin-top: 40px;
-		}
 		@media (max-width: $breakpoint-sm) {
 			margin-top: 0px;
 		}

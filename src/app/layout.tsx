@@ -11,18 +11,18 @@ export const metadata: Metadata = {
 
 const GTM_ID = "G-EQLTVET0XX";
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="en">
-      <GoogleTagManager gtmId={GTM_ID} />
-      <body className={`${poppins.className}`} id="top">
-        <Header />
-        <main className="main">{children}</main>
-      </body>
-    </html>
-  );
+type RootLayoutProps = Readonly<{
+	children: React.ReactNode;
+}>;
+
+export default function RootLayout({children}: RootLayoutProps) {
+	return (
+		<html lang="en">
+			<GoogleTagManager gtmId={GTM_ID} />
+			<body className={`${poppins.className}`} id="top">
+				<Header />
+				<main className="main">{children}</main>
+			</body>
+		</html>
+	);
 }

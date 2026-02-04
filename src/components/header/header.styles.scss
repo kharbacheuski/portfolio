@@ -4,12 +4,13 @@
     padding: 20px 30px;
     position: fixed;
     width: 100%;
-    backdrop-filter: blur(20px);
-    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.7);
     z-index: 2;
 
     &_title {
         display: flex;
+        align-items: center;
         gap: 20px;
 
         @media (max-width: $breakpoint-md) {
