@@ -125,7 +125,7 @@ export default function Home() {
 			</section>
 
 			<section className="stack">
-				<div className="container">
+				<div className="container wide">
 					<div className="stack_inner">
 						<div className="stack_icons">
 							<img data-animate-top style={{transitionDelay: '0.2s'}} width={80} height={80} className="logo" src="/react-logo.svg" alt="" />
@@ -161,7 +161,7 @@ export default function Home() {
 			</section>
 
 			<section className="projects">
-				<div className="container">
+				<div className="container xl">
 					<div className="projects_inner">
 						<h2>Projects</h2>
 						<div className="project_items">
@@ -206,7 +206,7 @@ export default function Home() {
 			</section>
 
 			<section id="contacts" className="contacts">
-				<div className="container">
+				<div className="container xl">
 					<div className="contacts_inner">
 						<h2 data-animate-left style={{transitionDelay: '0.0s'}}>
 							Do you want to contact me?

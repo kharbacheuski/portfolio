@@ -58,6 +58,9 @@ a {
 	margin-right: auto;
 
 	padding: 0 30px;
+
+	&.xl {max-width: $breakpoint-xl}
+	&.wide {max-width: $breakpoint-wide}
 }
 
 [data-animate] {
