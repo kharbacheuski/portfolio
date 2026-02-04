@@ -19,7 +19,7 @@ export default function Home() {
 
 	return (<Fragment>
 			<section id="about" className="preview">
-				<div className="container">
+				<div className="container xl">
 					<div className="preview_inner">
 						<div className="preview_grid">
 							<div className="preview_image">
@@ -86,46 +86,48 @@ export default function Home() {
 						</SwiperSlide>
 						<SwiperSlide className="past_item job">
 							<h3 className={mulish.className}>Job</h3>
-							<p>
-								<a target="_blank" href="https://www.linkedin.com/company/finmarketsoft-people/">Finmarket Soft</a>
-							</p>
-							<span>(fulltime since jan 2022)</span>
+
+							<div className="past_item-block">
+								<p>
+									<a target="_blank" href="https://www.linkedin.com/company/finmarketsoft-people/">Finmarket Soft</a>
+								</p>
+								<span>(fulltime since jan 2022)</span>
+							</div>
+
+							<div className="past_item-block">
+								<p className="green">
+									<a target="_blank" href="https://biggiko.com/">Biggiko</a>
+								</p>
+								<span>(part-time since aug 2023 - mar 2024)</span>
+							</div>
 						</SwiperSlide>
 						<SwiperSlide className="past_item education">
 							<h3 className={mulish.className}>Education</h3>
-							<p>
-								<a target="_blank" href="https://www.bsuir.by/">Belarusian State University of Informatics and Radioelectronics</a>
-							</p>
-							<span>(КСиС/ВМСиС 2021 - 2025)</span>
+
+							<div className="past_item-block">
+								<p>
+									<a target="_blank" href="https://www.bsuir.by/">Belarusian State University of Informatics and Radioelectronics</a>
+								</p>
+								<span>(КСиС/ВМСиС 2021 - 2025)</span>
+							</div>
 						</SwiperSlide>
 						<SwiperSlide className="past_item hobbie">
 							<h3 className={mulish.className}>Hobby</h3>
-							<p>Music / Films / Books</p>
-							<a className="link-with-logo" target="_blank" href="https://open.spotify.com/artist/6p6WdgrsAyVbtNVW2vRuHn">
-								<img width={30} height={30} src="/spotify.svg" alt="" />
-								<span>манер оф спич</span>
-							</a>
+
+							<div className="past_item-block">
+								<p>Music / Films / Books</p>
+								<a className="link-with-logo" target="_blank" href="https://open.spotify.com/artist/6p6WdgrsAyVbtNVW2vRuHn">
+									<img width={30} height={30} src="/spotify.svg" alt="" />
+									<span>манер оф спич</span>
+								</a>
+							</div>
 						</SwiperSlide>
 					</Swiper>
 				</div>
 			</section>
 
-			<section id="experience" className="experience">
-				<div className="container">
-					<div className="experience_inner">
-						<h2 data-animate-top style={{transitionDelay: '0.1s'}}>
-							I have extensive experience in client side development using a variety of technologies and i can create both <span className={`uppercase`}>
-								landing pages
-							</span> and <span className={`uppercase`}>
-								large applications
-							</span> with a lot of logic and states
-						</h2>
-					</div>
-				</div>
-			</section>
-
-			<section className="stack">
-				<div className="container wide">
+			<section id="stack" className="stack">
+				<div className="container xl">
 					<div className="stack_inner">
 						<div className="stack_icons">
 							<img data-animate-top style={{transitionDelay: '0.2s'}} width={80} height={80} className="logo" src="/react-logo.svg" alt="" />
@@ -172,6 +174,20 @@ export default function Home() {
 				</div>
 			</section>
 
+			<section id="experience" className="experience">
+				<div className="container">
+					<div className="experience_inner">
+						<h2 data-animate-top style={{transitionDelay: '0.1s'}}>
+							I have extensive experience in client side development using a variety of technologies and i can create both <span className={`uppercase`}>
+								landing pages
+							</span> and <span className={`uppercase`}>
+								large applications
+							</span> with a lot of logic and states
+						</h2>
+					</div>
+				</div>
+			</section>
+
 			<section className="projects">
 				<div className="container xl">
 					<div className="projects_inner">
@@ -187,31 +203,29 @@ export default function Home() {
 								<h3 className="project_item-headline" data-animate-top style={{transitionDelay: '0.1s'}}>1. Cryptocurrency finance system</h3>
 								<div className="project_item-description">
 									<ul>
-										<li>
+										<li data-animate-top style={{transitionDelay: '0.2s'}}>
 											Developing a backoffice for cryptosystem configuration. The main part was implementing CRUD interfaces with tables, data validation, and business logic.
 											<br />
 											The architecture consisted of approximately 90 <span className="tech">microfrontends using Webpack Module Federation</span>, which allowed for independent development and deployment of parts of the system.
-											<br />
 											I wrote the project from scratch through to the production stage.
 										</li>
-										<li>
+										<li data-animate-top style={{transitionDelay: '0.25s'}}>
 											Development and support of several company websites and blogs based on <span className="tech">Ghost CMS</span>, with unique design themes.
-											<br />
 											This work included layout using <span className="tech">Figma</span> layouts, improving website performance using PageSpeed ​​reports, developing new pages, and redesigns.
 										</li>
 									</ul>
 								</div>
 							</div>
 							<div className="project_item">
-								<h3 className="project_item-headline" data-animate-top style={{transitionDelay: '0.2s'}}>2. Advanced English language learning product</h3>
+								<h3 className="project_item-headline" data-animate-top style={{transitionDelay: '0.1s'}}>2. Advanced English language learning product</h3>
 								<div className="project_item-description">
 									<ul>
-										<li>													
+										<li data-animate-top style={{transitionDelay: '0.2s'}}>													
 											Developed a mobile onboarding system with <span className="tech">Stripe</span> payment system integration.
 											<br />
 											I implemented several onboarding sequences with analytics links, allowing me to test and compare various user journeys.
 										</li>
-										<li>		
+										<li data-animate-top style={{transitionDelay: '0.25s'}}>		
 											Developing a backoffice for configuring application settings.
 										</li>
 									</ul>

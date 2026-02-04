@@ -14,7 +14,7 @@ export default function Header() {
                 <div className="header_menu">
                     <ul>
                         <li><a href="#top">.About</a></li>
-                        <li><a href="#experience">.Experience</a></li>
+                        <li><a href="#stack">.Experience</a></li>
                         <li><a href="#contacts">.Contacts</a></li>
                     </ul>
                 </div>
